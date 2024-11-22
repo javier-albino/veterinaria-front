@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 class="mt-4">Lista de Mascotas</h2>
+  <table class="table mt-4">
+    <thead class="thead-light">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Raza</th>
+        <th>Edad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets">
+        <td>{{ pet.id }}</td>
+        <td>{{ pet.nombre }}</td>
+        <td>{{ pet.tipo }}</td>
+        <td>{{ pet.raza }}</td>
+        <td>{{ pet.edad }}</td>
+        <td>
+          <!-- Botón para eliminar -->
+          <button class="btn btn-danger btn-sm" (click)="deletePet(pet.id)">Eliminar</button>
+          <!-- Botón para actualizar -->
+          <button class="btn btn-primary btn-sm ml-2" (click)="goToEditPet(pet.id)">Actualizar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
